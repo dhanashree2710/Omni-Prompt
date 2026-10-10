@@ -1,0 +1,6 @@
+{
+  "name": "OmniPrompt AI",
+  "description": "Universal prompt engineering platform generating production blueprints for Web Apps, Mobile Apps, Frontend HTML5, Backend APIs, PPT decks, PDFs, Research Studies, Video, Images, and Marketing content.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
