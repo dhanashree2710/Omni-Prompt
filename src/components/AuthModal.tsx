@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { login, register, AuthUser, authErrorMessage } from '../utils/auth';
+import logoUrl from '../assets/logo.jpeg';
 
 interface AuthModalProps {
   onSuccess: (user: AuthUser) => void;
@@ -38,9 +39,9 @@ export function AuthModal({ onSuccess, onClose }: AuthModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-[#0c0c0e]/85 backdrop-blur-md">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-[#0c0c0e]/90 backdrop-blur-md">
       <div className="w-full max-w-sm bg-[#141416] border border-[#27272a] rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
-        <div className="px-6 pt-6 pb-4 text-center border-b border-[#1f1f23] relative">
+        <div className="px-6 pt-8 pb-5 text-center border-b border-[#1f1f23] relative">
           {onClose && (
             <button
               type="button"
@@ -51,10 +52,24 @@ export function AuthModal({ onSuccess, onClose }: AuthModalProps) {
               <span className="material-symbols-outlined text-[20px]">close</span>
             </button>
           )}
-          <div className="w-16 h-16 mx-auto mb-3 rounded-2xl overflow-hidden bg-white/5 flex items-center justify-center">
-            <img src="/logo.png" alt="OmniPrompt" className="w-14 h-14 object-contain" />
+
+          {/* Logo — large & clear on white plate */}
+          <div className="mx-auto mb-4 w-24 h-24 rounded-2xl bg-white shadow-lg shadow-[#8b5cf6]/20 flex items-center justify-center p-2 border border-[#27272a]/50">
+            <img
+              src={logoUrl}
+              alt="OmniPrompt"
+              className="w-full h-full object-contain"
+              draggable={false}
+            />
           </div>
-          <h2 className="text-lg font-semibold text-[#fafafa]">
+
+          <h1 className="text-[20px] font-bold tracking-tight">
+            <span className="text-[#fafafa]">Omni</span>
+            <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
+              Prompt
+            </span>
+          </h1>
+          <h2 className="text-[15px] font-medium text-[#a1a1aa] mt-2">
             {mode === 'login' ? 'Welcome back' : 'Create account'}
           </h2>
           <p className="text-[12px] text-[#71717a] mt-1">

@@ -22,6 +22,7 @@ import { synthesizePrompt, autoDetectOutputType } from './utils/synthesizer';
 import { synthesizePromptRemote } from './utils/api';
 import { saveHistoryItem } from './utils/history';
 import { AuthUser, fetchMe, getStoredUser, logout as authLogout } from './utils/auth';
+import logoUrl from './assets/logo.jpeg';
 
 const NAV_ITEMS: { id: ActiveTab; label: string; icon: string }[] = [
   { id: 'studio', label: 'Studio', icon: 'edit_square' },
@@ -242,7 +243,7 @@ export function App() {
       >
         {/* Brand */}
         <div className="h-14 flex items-center gap-2.5 px-4 border-b border-[#1f1f23]">
-          <img src="/logo.png" alt="OmniPrompt" className="w-8 h-8 rounded-lg object-contain bg-white/5" />
+          <img src={logoUrl} alt="OmniPrompt" className="w-9 h-9 rounded-lg object-contain bg-white p-0.5 shadow-sm" />
           <div className="min-w-0 flex-1">
             <span className="text-[14px] font-semibold tracking-tight block truncate">OmniPrompt</span>
             <span className="text-[10px] text-[#71717a]">AI Studio</span>
@@ -316,7 +317,7 @@ export function App() {
           >
             <span className="material-symbols-outlined text-[20px]">menu</span>
           </button>
-          <img src="/logo.png" alt="" className="md:hidden w-7 h-7 rounded-md object-contain" />
+          <img src={logoUrl} alt="OmniPrompt" className="md:hidden w-8 h-8 rounded-lg object-contain bg-white p-0.5" />
 
           {isResultView && (
             <button
